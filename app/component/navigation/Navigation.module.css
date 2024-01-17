@@ -64,3 +64,43 @@
 .topIconDiv{
     gap: 20px;
 }
+.productContainer{
+    width: calc(100% - 100px);
+    margin-left: 100px;
+    display: flex;
+    padding: 30px 20px;
+    gap: 20px;
+}
+.filterDiv{
+    width: 20%;
+    border-radius: 10px;
+    background-color:#1E1D16;
+    padding: 20px ;
+}
+.filteredDataDivContainer{
+    width: 78%;
+    overflow-y: auto;
+    max-height: 755px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.filteredDataDiv{
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.topDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.topDivText{
+    width: 80%;
+}
+.topDivPop{
+    width: 20%;
+}

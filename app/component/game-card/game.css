@@ -2,6 +2,7 @@
     width: calc(100% - 100px);
     padding: 40px 30px 60px 30px;
     margin-left: 100px;
+    margin-top: 30px;
 }
 
 .greenDot{
@@ -65,6 +66,14 @@
     color:#E58E27 ;
     cursor: pointer;
 }
+.btn2{
+    width: 155px;
+    height: 32px;
+    border-radius: 20px;
+    background: #E58E27;
+    cursor: pointer;
+    color: white;
+}
 
 .card-btn{
     width: 35%;
@@ -79,4 +88,29 @@
     letter-spacing: 0em;
     margin:5px 10px;
 
+}
+.footer {
+    width: calc(100%-100px);
+    margin-left: 100px;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.footer-top-text{
+    gap: 20px;
+}
+.footerHr{
+    width: 100%;
+    border: 1px solid white;
+}
+.icon-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.social-icons{
+    gap: 20px;
 }

@@ -4,6 +4,7 @@ import './globals.css'
 import SideNavigation from './component/navigation/sideNav'
 import TopNavigation from './component/navigation/TopNavigation'
 import MainCard from './component/game-card/MainCard'
+import Footer from './component/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,8 +23,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <SideNavigation />
         <TopNavigation />
-        <MainCard />
+        
         {children}
+        <MainCard />
+        <Footer />
       </body>
     </html>
   )
