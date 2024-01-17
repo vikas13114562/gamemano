@@ -1,0 +1,66 @@
+.sideNavContainer {
+    position: absolute;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0px;
+    height: 100vh;
+    border-right: 1px solid white;
+}
+
+.iconContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+
+.iconContainer img:hover {
+    fill: #DAB785;
+    cursor: pointer;
+  }
+.hrBorder{
+ width: 100%;
+ border-top: 1px solid white;   
+}
+
+.topNavContainer{
+    display: flex;
+    margin-left: 100px;
+    padding: 30px 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.dfc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navTextContainer{
+    width: 40%;
+    gap: 20px;
+    justify-content: space-around;
+}
+.vBorder {
+    height: 30px;
+    border: 1px solid white;
+}
+.searchInput {
+    border: 1px solid white;
+    background-color: black;
+    border-radius: 30px;
+    padding: 5px 20px;
+    size: 10px;
+}
+.wrapper{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.topIconDiv{
+    gap: 20px;
+}

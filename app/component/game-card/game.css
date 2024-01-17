@@ -1,0 +1,82 @@
+.main-card{
+    width: calc(100% - 100px);
+    padding: 40px 30px 60px 30px;
+    margin-left: 100px;
+}
+
+.greenDot{
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+.statusDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    
+}
+.dfc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.status-text{
+    font-size: 12px;
+}
+.main-heading{
+    font-family: Aoboshi One;
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 101px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.launch-date {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: #1E1E1E;
+    padding: 10px;
+    width: 50%;
+    text-transform: uppercase;
+}
+.paragraph{
+    font-family: Prosto One;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 60%;
+    margin-top: 50px;
+}
+.btn1{
+    width: 170px;
+    height: 50px;
+    border-radius: 30px;
+    background: #E58E27;
+    cursor: pointer;
+}
+.btn1:hover{
+    background: white;
+    color:#E58E27 ;
+    cursor: pointer;
+}
+
+.card-btn{
+    width: 35%;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+.buy-text{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    margin:5px 10px;
+
+}
