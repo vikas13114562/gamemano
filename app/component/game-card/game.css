@@ -114,3 +114,85 @@
 .social-icons{
     gap: 20px;
 }
+.select {
+    border-radius: 18px;
+    padding: 8px;
+    background-color: #1E1E1E;
+    color: white;
+    border:  1px solid white;
+    width: 100%;
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+.animated {
+    opacity: 0.1;
+    animation: fadeIn 5s ease forwards; 
+  }
+  .main-card1{
+    width: calc(100% - 100px);
+    padding: 5px 30px 60px 30px;
+    margin-left: 100px;
+}
+  
+  .animated-paragraph {
+    transform: translateX(-100%);
+    animation: slideIn 5s ease forwards; 
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    to {
+      transform: translateX(0);
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+    .paragraph{
+        width: 85%;
+    }
+    .card-btn{
+        width: 55%;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .paragraph{
+        width: 98%;
+    }
+    .card-btn{
+        width: 99%;
+    }
+    .main-heading{
+        font-size: 50px;
+        line-height: 81px;
+    }
+    .btn1{
+        width: 80px;
+        height: 30px;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+    .footer-top-text{
+        gap: 10px;
+        flex-wrap: wrap;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+    .copyright{
+        font-size: 10px;
+    }
+    .launch-date {
+        width: 98%;
+        font-size: 10px;
+    }
+    
+  }

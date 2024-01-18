@@ -4,23 +4,48 @@ import styles from "../component/navigation/Navigation.module.css";
 import useFetchData from "../component/game-card/utils/fetchData";
 import { ProductProps } from "../component/product/productComponent";
 import ProductCard from "../component/product/productCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import CustomSelect from "../component/game-card/utils/CustomSelect";
+import AccordionUsage from "../component/game-card/utils/Accordion";
 export default function Page() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [filteredData, setFilteredData] = useState<any>([]);
+  const [selectedOption, setSelectedOption] = useState<string>("");
   const { data, loading } = useFetchData(
     "https://dummyjson.com/products/categories"
   );
   const product = useFetchData("https://dummyjson.com/products");
 
+  useEffect(()=>{
+    let temp = filteredData.length === 0 ? (product?.data?.products || []) : filteredData
+    if(selectedOption === "Price : Low to High"){
+      let res = temp.slice().sort((a:any, b:any) => a.price - b.price)
+      setFilteredData(res)
+    }if(selectedOption === "Price : High to Low"){
+      let res = temp.slice().sort((a:any, b:any) => b.price - a.price)
+      setFilteredData(res)
+    }
+
+  },[selectedOption])
+
   return (
     <div className={styles.productContainer}>
+      <div className={styles.accordionDiv}>
+        <AccordionUsage
+          categories={data}
+          loading={loading}
+          setSelectedCategories={setSelectedCategories}
+          setFilteredData={setFilteredData}
+          setSelectedOption={setSelectedOption}
+        />
+      </div>
       <div className={styles.filterDiv}>
         <FilterComponent
           categories={data}
           loading={loading}
           setSelectedCategories={setSelectedCategories}
           setFilteredData={setFilteredData}
+          setSelectedOption={setSelectedOption}
         />
       </div>
       {product.loading ? (
@@ -44,7 +69,9 @@ export default function Page() {
                     } found`}
               </div>
             </div>
-            <div className={styles.topDivPop}></div>
+            <div className={styles.topDivPop}>
+              <CustomSelect selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+            </div>
           </div>
 
           <div className={styles.filteredDataDiv}>

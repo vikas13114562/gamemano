@@ -11,8 +11,10 @@ import styles from "./Navigation.module.css";
             <div className={styles.vBorder}></div>
             <div>LeaderBoard</div>
         </div>
-        <div>
-            <input className={styles.searchInput} type="text" placeholder="What are you looking for?" />
+        <div className={styles.searchDiv}>
+            <input className={styles.searchInput} type="text"
+                
+            placeholder="What are you looking for?" />
         </div>
         <div className={`${styles.dfc} ${styles.topIconDiv}`}>
             <div className={styles.vBorder}></div>

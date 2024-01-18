@@ -4,7 +4,7 @@ import StarRating from '../game-card/utils/StarRating';
 import './product.css';
 import { ProductProps } from './productComponent';
 const ProductCard = (props:ProductProps)=>{
-    const {title,description,price,images,rating} = props
+    const {title,description,price,images,rating,id} = props
     return (
         <div className='card-container'>
             <div className='card-img'>
@@ -19,7 +19,7 @@ const ProductCard = (props:ProductProps)=>{
                 <div className='card-btn-container'>
                     <div className='price'>{`$ ${price || 100}`}</div>
                     <div className='buy-btn'>
-                        <BuyNow />
+                        <BuyNow id={id} />
                     </div>
                 </div>
             </div>

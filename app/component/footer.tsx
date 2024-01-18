@@ -11,7 +11,7 @@ const Footer = () => {
         <div>Cookie Preferences</div>
       </div>
       <div className="footerHr"></div>
-      <div className="dfc" style={{ opacity: 0.5 }}>
+      <div className="dfc copyright" style={{ opacity: 0.5 }}>
         Copyright © GameQuest, Inc. All rights reserved
       </div>
       <div className="dfc social-icons">

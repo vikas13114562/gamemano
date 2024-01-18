@@ -18,7 +18,7 @@ const useFetchData = (props:any)=>{
             }
            
         }
-        // fetchProduct()
+        fetchProduct()
     },[props])
     return {
         error,

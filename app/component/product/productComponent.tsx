@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import './product.css'
 import ProductCard from './productCard';
+import useFetchData from '../game-card/utils/fetchData';
+import { useRouter } from 'next/navigation';
 
 export interface ProductProps {
     id: number;
@@ -18,27 +20,23 @@ export interface ProductProps {
   }
 
 const ProductComponent = ()=>{
-    const [data,setData] = useState([])
-
-    useEffect(()=>{
-        const fetchProduct = async()=>{
-            const res = await fetch('https://dummyjson.com/products')
-            const result = await res.json()
-            if(result.products) {
-                setData(result.products)
-            }
+        const {loading,data} = useFetchData("https://dummyjson.com/products")
+        const router = useRouter()
+        const handleClick = ()=>{
+            router.push(`/product`)
         }
-        // fetchProduct()
-    },[])
     return (
         <div className="main-product-container">
             <div className='product-heading-container'>
                 <div className='product-heading'>MOST TRENDING</div>
-                <div className='all-btn'>View All</div>  
+                <div className='all-btn' style={{cursor:'pointer'}}
+                    onClick={handleClick}
+                >View All Product</div>  
             </div>
             <div className='all-product-container'>
                 {
-                    data.map((ele:ProductProps)=>{
+                    loading ? <p>Loading....</p>:
+                    ((data?.products).slice(0,4) ||[]).map((ele:ProductProps)=>{
                         return (
                             <ProductCard
                                 key={ele?.id}

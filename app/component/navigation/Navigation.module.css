@@ -1,5 +1,5 @@
 .sideNavContainer {
-    position: absolute;
+    position: fixed;
     width: 100px;
     display: flex;
     flex-direction: column;
@@ -99,8 +99,65 @@
     gap: 20px;
 }
 .topDivText{
-    width: 80%;
+    width: 76%;
 }
 .topDivPop{
-    width: 20%;
+    width: 24%;
+    padding: 10px;
 }
+.searchInput::-ms-input-placeholder { 
+    color: red;
+  }
+
+  .accordionDiv{
+    display: none;
+  }
+  @media only screen and (max-width: 1000px) {
+    .searchDiv{
+        display: none;
+    }
+    .navTextContainer{
+        width: 60%;
+    }
+    .topDiv{
+        flex-wrap: wrap;
+        
+    }
+    .topDivText{
+        width: 95%;
+    }
+    .topDivPop{
+        width: 50%;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    .navTextContainer{
+        width: 98%;
+    }
+    .topIconDiv{
+        display: none;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .navTextContainer{
+        width: 100%;
+        font-size: 12px;
+    }
+    .topDivPop{
+        width: 90%;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    .filterDiv{
+        display: none;
+    }
+    .accordionDiv{
+        display: block;
+    }
+    .productContainer{
+        flex-direction: column;
+    }
+    .filteredDataDivContainer{
+        width: 100%;
+    }
+  }

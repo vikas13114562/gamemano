@@ -3,18 +3,21 @@ import './game.css'
 import PlayingStatus from './utils/currentPlaying'
 import LaunchDate from './utils/launchDate'
 import PlayNowBtn from './utils/playNowBtn'
-const MainCard = ()=>{
+import { MainCardProps } from './utils/allData'
+const MainCard = (props:MainCardProps)=>{
+    const {heading,date,isCover,paragraph} = props
     return (
-        <div className='main-card'>
+        <div className={isCover ? "main-card1":"main-card"}>
             <PlayingStatus />
-            <div className='main-heading'>
-                Warloards
+            <div className={`main-heading ${isCover ? 'animated':""}`}>
+                {heading}
             </div>
-            <LaunchDate dateText={"30TH December"} />
-            <p className='paragraph'>
-                Players assume the role of Deacon St. John, a former bounty hunter struggling to survive in a post-apocalyptic world filled with zombie-like creatures called Freaks. Though players are surrounded by death and danger on all sides, the world that they get to explore feels as though it's truly alive, which can encourage players to take risks when they probably shouldn't.
+            <div className={`${isCover ? 'animated':""}`}>
+            <LaunchDate dateText={date} /></div>
+            <p className={`paragraph ${isCover ? 'animated-paragraph':""}`}>
+                {paragraph}
             </p>
-            <div className='card-btn dfc'>
+            <div className={`card-btn dfc ${isCover ? 'animated':""}`}>
                 <PlayNowBtn />
                 <Image src="/ios_img.png" width={180} height={50} alt="ios" />
             </div>
