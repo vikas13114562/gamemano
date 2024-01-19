@@ -46,7 +46,6 @@ const FilterComponent: React.FC<FilterProps> = ({
           return response.json();
         })
       );
-
       const extractedData = responses.map((item) => item.products).flat();
       setFilteredData(extractedData);
       setSelectedCategories([...selectedFilters]);
