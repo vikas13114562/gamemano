@@ -53,6 +53,8 @@
     text-align: left;
     width: 60%;
     margin-top: 50px;
+    position: relative;
+    z-index: -1;
 }
 .btn1{
     width: 170px;
@@ -73,6 +75,10 @@
     background: #E58E27;
     cursor: pointer;
     color: white;
+}
+.btn2:hover{
+    background: white;
+    color:#E58E27 ;
 }
 
 .card-btn{
@@ -196,3 +202,4 @@
     }
     
   }
+ 

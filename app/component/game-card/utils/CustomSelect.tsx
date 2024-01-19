@@ -21,7 +21,11 @@ const CustomSelect = (props:any) => {
         </option>
         {options.map((option) => (
           <option key={option} value={option} 
-            style={{padding:'10px'}}
+            style={{padding:'10px',
+            height:'40px !important',
+            
+
+          }}
           >
             {option}
           </option>

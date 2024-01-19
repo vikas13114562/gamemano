@@ -44,22 +44,48 @@
     gap: 20px;
     justify-content: space-around;
 }
+.navTextContainer div {
+    cursor: pointer;
+}
+.navTextContainer div:hover{
+    color: #E58F28;
+}
 .vBorder {
     height: 30px;
     border: 1px solid white;
+   
 }
+.searchDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .searchInput {
     border: 1px solid white;
     background-color: black;
     border-radius: 30px;
-    padding: 5px 20px;
-    size: 10px;
+    padding: 5px 0px 5px 40px;
+
+}
+.searchInput::placeholder{
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    margin-left: 20px;
+
 }
 .wrapper{
     width: 36px;
     height: 36px;
     border-radius: 50%;
     border: 1px solid white;
+    cursor: pointer;
+}
+.wrapper:hover{
+    border: 1px solid #E58F28;
 }
 .topIconDiv{
     gap: 20px;
@@ -105,9 +131,7 @@
     width: 24%;
     padding: 10px;
 }
-.searchInput::-ms-input-placeholder { 
-    color: red;
-  }
+
 
   .accordionDiv{
     display: none;
@@ -161,3 +185,58 @@
         width: 100%;
     }
   }
+  /* side navigation */
+  .sideNavigation {
+    position: absolute;
+    padding: 40px 15px 10px 15px;
+    top: 0;
+    left: 0px; 
+    width: 200px;
+    height: 100vh;
+    background-color: #2B2417;
+    opacity: 0.98;
+    color: white;
+    z-index: 10;
+    transform: translateX(-100%);
+    animation: slideIn 2s ease forwards; 
+    display: flex;
+    flex-direction: column;
+  }
+  @keyframes slideIn {
+    to {
+      transform: translateX(0);
+    }
+  }
+
+.sideNavText {
+    width: 90%;
+    gap: 25px;
+    margin-bottom: 40px;
+    justify-content: flex-start;
+}
+
+.textIcon{
+    margin-top: 35px;
+}
+.textIcon div:hover {
+    cursor: pointer;
+    color: #DAB785;
+}
+.textIcon svg:hover {
+    fill: red !important;
+}
+.hrBorder1{
+    position: absolute;
+    left: 0;
+    bottom: 28%;
+    width: 100%;
+    border: 1px solid white;
+}
+.searchIconDiv{
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    top: 4px;
+    left: 30px;
+}

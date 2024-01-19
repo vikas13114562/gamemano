@@ -113,3 +113,6 @@ input[type="checkbox"] {
         font-size: 12px;
     }
   }
+  .all-btn:hover{
+    color: #DAB785;
+  }
