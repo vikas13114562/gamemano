@@ -38,10 +38,12 @@ const SideNavigation = () => {
           </div>
           <div className={styles.textIcon}>
             <div className={`${styles.dfc} ${styles.sideNavText}`}>
-              <Link href={"/"}>
+              
                 <Image src="/home.svg" width={24} height={24} alt="home" />
+             
+              <Link href={"/"}>
+                <div>Home</div>
               </Link>
-              <div>Home</div>
             </div>
             <div className={`${styles.dfc} ${styles.sideNavText}`}>
               <Image src="/msg_box.svg" width={24} height={24} alt="msg box" />
