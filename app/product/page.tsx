@@ -17,12 +17,12 @@ export default function Page() {
   const product = useFetchData("https://dummyjson.com/products");
 
   useEffect(()=>{
-    let temp = filteredData.length === 0 ? (product?.data?.products || []) : filteredData
+    let temp = filteredData?.length === 0 ? (product?.data?.products || []) : filteredData
     if(selectedOption === "Price : Low to High"){
-      let res = temp.slice().sort((a:any, b:any) => a.price - b.price)
+      let res = temp?.slice()?.sort((a:any, b:any) => a?.price - b?.price)
       setFilteredData(res)
     }if(selectedOption === "Price : High to Low"){
-      let res = temp.slice().sort((a:any, b:any) => b.price - a.price)
+      let res = temp?.slice()?.sort((a:any, b:any) => b?.price - a?.price)
       setFilteredData(res)
     }
 
@@ -32,7 +32,7 @@ export default function Page() {
     <div className={styles.productContainer}>
       <div className={styles.accordionDiv}>
         <AccordionUsage
-          categories={data}
+          categories={data ? data?.map((item:any)=>item?.name) : []} 
           loading={loading}
           setSelectedCategories={setSelectedCategories}
           setFilteredData={setFilteredData}
@@ -41,7 +41,7 @@ export default function Page() {
       </div>
       <div className={styles.filterDiv}>
         <FilterComponent
-          categories={data}
+         categories={data ? data?.map((item:any)=>item?.name) : []} 
           loading={loading}
           setSelectedCategories={setSelectedCategories}
           setFilteredData={setFilteredData}
@@ -60,12 +60,12 @@ export default function Page() {
                   : "All Categories"
               }`}</div>
               <div style={{ fontSize: "12px" }}>
-                {filteredData.length === 0
+                {filteredData?.length === 0
                   ? `${product?.data?.products?.length} result${
                       product?.data?.products?.length !== 1 ? "s" : ""
                     } found`
-                  : `${filteredData.length} result${
-                      filteredData.length !== 1 ? "s" : ""
+                  : `${filteredData?.length} result${
+                      filteredData?.length !== 1 ? "s" : ""
                     } found`}
               </div>
             </div>
@@ -76,11 +76,11 @@ export default function Page() {
 
           <div className={styles.filteredDataDiv}>
             {(
-              (filteredData.length == 0
+              (filteredData?.length == 0
                 ? product?.data?.products
                 : filteredData) || []
             ).map((ele: ProductProps) => {
-              return <ProductCard key={ele?.id} {...ele} />;
+              return <ProductCard key={ele?.id} data={ele} />;
             })}
           </div>
         </div>

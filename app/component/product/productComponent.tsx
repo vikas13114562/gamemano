@@ -21,6 +21,7 @@ export interface ProductProps {
 
 const ProductComponent = ()=>{
         const {loading,data} = useFetchData("https://dummyjson.com/products")
+        
         const router = useRouter()
         const handleClick = ()=>{
             router.push(`/product`)
@@ -40,7 +41,7 @@ const ProductComponent = ()=>{
                         return (
                             <ProductCard
                                 key={ele?.id}
-                                {...ele}
+                                data = {ele}
                             />
                         )
                     })

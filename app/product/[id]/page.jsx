@@ -10,7 +10,7 @@ export default function Page({params}) {
                 !error && loading && <p>Loading....</p>
             }
             {
-                !error && !loading && <ProductCard {...data} />
+                !error && !loading && <ProductCard data={data} />
             }
         </div>
     )

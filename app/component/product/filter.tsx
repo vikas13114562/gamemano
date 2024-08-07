@@ -46,7 +46,7 @@ const FilterComponent: React.FC<FilterProps> = ({
           return response.json();
         })
       );
-      const extractedData = responses.map((item) => item.products).flat();
+      const extractedData = responses?.map((item) => item.products).flat();
       setFilteredData(extractedData);
       setSelectedCategories([...selectedFilters]);
     } catch (error: any) {
@@ -61,18 +61,19 @@ const FilterComponent: React.FC<FilterProps> = ({
         <p>Loading....</p>
       ) : (
         <div className="space-y-2">
-          {categories.map((category) => (
-            <div key={category} className="flex items-center">
+          {categories && categories?.length > 0 && categories?.map((category,ind) => {
+            
+            return (<div key={ind} className="flex items-center">
               <input
                 type="checkbox"
                 id={category}
-                checked={selectedFilters.includes(category)}
+                checked={selectedFilters?.includes(category)}
                 onChange={() => handleCheckboxChange(category)}
                 className="mr-4 checkbox"
               />
               <label htmlFor={category}>{category}</label>
-            </div>
-          ))}
+            </div>)}
+          )}
         </div>
       )}
 

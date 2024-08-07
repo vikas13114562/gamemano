@@ -3,8 +3,9 @@ import BuyNow from '../game-card/utils/BuyNowBtn';
 import StarRating from '../game-card/utils/StarRating';
 import './product.css';
 import { ProductProps } from './productComponent';
-const ProductCard = (props:ProductProps)=>{
-    const {title,description,price,images,rating,id} = props
+const ProductCard = ({key,data}:{key:number,data:ProductProps})=>{
+    
+    const {title,description,price,images,rating,id} = data
     return (
         <div className='card-container'>
             <div className='card-img'>
